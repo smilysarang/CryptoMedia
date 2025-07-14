@@ -1,0 +1,73 @@
+<!-- File: encryption.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Encryption</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">CryptoMedia</a>
+    <div class="nav-links">
+      <a href="encryption.html">Encrypt</a>
+      <a href="decryption.html">Decrypt</a>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+    <h1>Encrypt Media</h1>
+    <form id="encryptForm">
+      <div class="form-group">
+        <label for="mediaType">Media Type:</label>
+        <select id="mediaType" required>
+          <option value="">-- Select --</option>
+          <option value="image">Image</option>
+          <option value="audio">Audio</option>
+          <option value="video">Video</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fileInput">Choose File:</label>
+        <label for="fileInput" class="file-label">Browse</label>
+        <input type="file" id="fileInput" accept=".jpg,.jpeg,.mp4,.wav" required>
+        <span id="fileNameDisplay" class="file-name-display"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="rInput">Parameter r:</label>
+        <input type="number" step="0.000001" min="3.57" max="4.0" id="rInput" placeholder="Enter r (3.57 - 4.0)" required>
+      </div>
+
+      <div class="form-group">
+        <label for="keyInput">Key:</label>
+        <input type="number" step="0.000001" min="0.000001" max="0.999999" id="keyInput" placeholder="Enter key (0 - 1)" required>
+      </div>
+
+      <button type="submit">Encrypt</button>
+    </form>
+    <div class="reminder">
+      Save the entered parameter (r) and key — without it you won't be able to decrypt the media.
+    </div>
+    <p class="footer-link">
+      Already have encrypted media? <a href="decryption.html">Go to Decryption</a>.
+    </p>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // Optional: show selected file name next to browse
+    const fileInput = document.getElementById("fileInput");
+    const fileNameDisplay = document.getElementById("fileNameDisplay");
+    fileInput.addEventListener("change", () => {
+      fileNameDisplay.textContent = fileInput.files.length ? fileInput.files[0].name : '';
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
