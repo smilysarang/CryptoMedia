@@ -30,18 +30,21 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const fileType = file.type;
+
     if (mediaType === 'audio' && !fileType.startsWith('audio/')) {
-  alert('Selected file is not an audio file.');
-  return;
-}
-if (mediaType === 'video' && !fileType.startsWith('video/')) {
-  alert('Selected file is not a video file.');
-  return;
-}
-if (mediaType === 'image' && !fileType.startsWith('image/')) {
-  alert('Selected file is not an image file.');
-  return;
-}
+      alert(`Mismatch: You selected "Audio" but uploaded a file of type ${fileType}`);
+      return;
+    }
+    if (mediaType === 'video' && !fileType.startsWith('video/')) {
+      alert(`Mismatch: You selected "Video" but uploaded a file of type ${fileType}`);
+      return;
+    }
+    if (mediaType === 'image' && !fileType.startsWith('image/')) {
+      alert(`Mismatch: You selected "Image" but uploaded a file of type ${fileType}`);
+      return;
+    }
+
 
 
     // Prepare FormData

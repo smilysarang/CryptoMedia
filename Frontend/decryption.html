@@ -1,21 +1,22 @@
-<!-- File: decryption.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Media Decryption</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">CryptoMedia</a>
-    <div class="nav-links">
-      <a href="encryption.html">Encrypt</a>
-      <a href="decryption.html">Decrypt</a>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">CryptoMedia</a>
+      <div class="nav-links">
+        <a href="encryption.html">Encrypt</a>
+        <a href="decryption.html">Decrypt</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <div class="container">
     <h1>Decrypt Media</h1>
@@ -39,12 +40,14 @@
 
       <div class="form-group">
         <label for="rInput">Parameter r:</label>
-        <input type="number" step="0.000001" min="3.57" max="4.0" id="rInput" placeholder="Enter r (used during encryption)" required>
+        <input type="number" step="0.000001" min="3.57" max="4.0" id="rInput"
+          placeholder="Enter r (used during encryption)" required>
       </div>
 
       <div class="form-group">
         <label for="keyInput">Key:</label>
-        <input type="number" step="0.000001" min="0.000001" max="0.999999" id="keyInput" placeholder="Enter key (used during encryption)" required>
+        <input type="number" step="0.000001" min="0.000001" max="0.999999" id="keyInput"
+          placeholder="Enter key (used during encryption)" required>
       </div>
 
       <button type="submit">Decrypt</button>
@@ -64,6 +67,7 @@
     });
   </script>
 
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
