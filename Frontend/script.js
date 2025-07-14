@@ -30,6 +30,20 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    if (mediaType === 'audio' && !fileType.startsWith('audio/')) {
+  alert('Selected file is not an audio file.');
+  return;
+}
+if (mediaType === 'video' && !fileType.startsWith('video/')) {
+  alert('Selected file is not a video file.');
+  return;
+}
+if (mediaType === 'image' && !fileType.startsWith('image/')) {
+  alert('Selected file is not an image file.');
+  return;
+}
+
+
     // Prepare FormData
     const fd = new FormData();
     fd.append('file', file);
